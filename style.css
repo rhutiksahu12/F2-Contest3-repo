@@ -1,0 +1,11 @@
+.bg-black{
+    background-color: black;
+}
+
+.bg-black-light{
+    background-color: rgb(23, 22, 22);
+}
+
+.card-width{
+    width: 16rem;
+}
