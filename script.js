@@ -2,6 +2,7 @@ window.onload = function () {
     fetchData();
 }
 
+let menu =''
 async function fetchData() {
     const apiUrl = 'https://raw.githubusercontent.com/saksham-accio/f2_contest_3/main/food.json'
 
@@ -13,7 +14,7 @@ async function fetchData() {
         const data = await response.json();
         console.log('Fetched Data', data)
         populateCard(data);
-        return data;
+        return menu=data;
     } catch (error) {
         console.error('Error fetching data', error)
     }
@@ -65,10 +66,7 @@ return card;
 
 // fetch data for other function
 
-const data = async()=>{
 
-    console.log('data',data)
-}
 
 const populateCard =(data) =>{
     const cardContainer = document.getElementById('card-container')
@@ -86,7 +84,7 @@ const takeOrder =()=>{
     return new Promise((resolve, reject)=>{
         setTimeout(()=>{
             
-            const shuffledOrder = data.slice().sort(()=> Math.random() - 0.5)
+            const shuffledOrder = menu.slice().sort(()=> Math.random() - 0.5)
             const selectedOrder = shuffledOrder.slice(0,3)
 
             const order = {
